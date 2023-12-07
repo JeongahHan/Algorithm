@@ -1,7 +1,17 @@
 class Solution {
     public int solution(String s) {
-        
-//Integer.parseInt() : 정수 / 문자열>>숫자  로 변환하는것을 사용한다. 
-       return Integer.parseInt(s);
+         
+        boolean Sign = true;
+            int result = 0;
+
+      for (int i = 0; i < s.length(); i++) {
+                char ch = s.charAt(i);
+                if (ch == '-')
+                    Sign = false;
+                else if(ch !='+')
+                    result = result * 10 + (ch - '0');
+            }
+            return Sign? result*1:-1 * result;
+    
     }
 }
